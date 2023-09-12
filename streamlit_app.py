@@ -27,3 +27,8 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
 streamlit.text(fruityvice_response.json())
+
+# converts json data into viewable data
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# takes above conversion and puts it in a dataframe
+streamlit.dataframe(fruityvice_normalized)
